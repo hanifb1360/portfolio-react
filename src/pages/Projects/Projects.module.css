@@ -1,0 +1,19 @@
+.projectsContainer {
+  background-color: rgb(40, 66, 85);
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 100vh;
+  padding-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 20px 20px;
+  grid-auto-flow: row;
+}
+
+@media screen and (max-width: 768px) {
+  .projectsContainer {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=Projects.module.css.map */

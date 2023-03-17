@@ -1,0 +1,22 @@
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+  .socialMediaBtn {
+    margin: 0 1rem;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    svg {
+      fill: #fff;
+      width: 2rem;
+      height: 2rem;
+      color: #fff;
+    }
+  }
+}

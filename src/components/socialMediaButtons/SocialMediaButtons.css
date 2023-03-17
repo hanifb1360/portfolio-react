@@ -1,0 +1,19 @@
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.buttonsContainer .socialMediaBtn {
+  margin: 0 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+.buttonsContainer .socialMediaBtn:hover {
+  transform: scale(1.2);
+}
+.buttonsContainer .socialMediaBtn svg {
+  fill: #fff;
+  width: 2rem;
+  height: 2rem;
+  color: #fff;
+}/*# sourceMappingURL=SocialMediaButtons.css.map */

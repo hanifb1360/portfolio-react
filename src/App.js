@@ -1,23 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
+import Skills from "./pages/Skills/Skills";
+import Projects from "./pages/Projects/Projects";
+import Contact from "./pages/Contact/Contact";
+import "./app.scss";
+
+import SideDrawer from "./components/sidemenu/SideDrawer";
+import BackDrop from "./components/backdrop/BackDrop";
+import { useState } from "react";
+
+const Layout = () => {
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+
+  const drawerToggleClickHandler = () => {
+    setSideDrawerOpen(!sideDrawerOpen);
+  };
+
+  const backDropClickHandler = () => {
+    setSideDrawerOpen(false);
+  };
+
+  let backdrop;
+
+  if (sideDrawerOpen) {
+    backdrop = <BackDrop click={backDropClickHandler} />;
+  }
+
+  return (
+    <div className='app'>
+      <Navbar drawerToggleClickHandler={drawerToggleClickHandler} />
+      <SideDrawer show={sideDrawerOpen} />
+      {backdrop}
+      <Outlet />
+    </div>
+  );
+};
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+
+      {
+        path: "/skills",
+        element: <Skills />,
+      },
+      {
+        path: "/projects",
+        element: <Projects />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <RouterProvider router={router} />
     </div>
   );
 }
