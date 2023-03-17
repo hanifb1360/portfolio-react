@@ -1,0 +1,92 @@
+@import "../../variables.scss";
+
+.contactPage {
+  width: 100%;
+  height: 100vh;
+  background-color: $primary-color;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+
+  .title {
+    font-weight: 400;
+    color: #fff;
+  }
+  .successMessage {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    background-color: #ccc;
+    border-radius: 5px;
+    padding: 2rem;
+  }
+
+  .form {
+    width: 30%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: $secondary-color;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 200;
+      color: $font-bright;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      background-color: rgb(185, 195, 196);
+    }
+
+    textarea {
+      height: 150px;
+      background-color: rgb(185, 195, 196);
+    }
+
+    input[type="submit"] {
+      background-color: #34608e;
+      color: #fff;
+      border: none;
+      width: 100%;
+      height: 2rem;
+      letter-spacing: 2px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #376fac;
+        letter-spacing: 4px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .contactPage {
+    height: fit-content;
+    padding: 2rem;
+    padding-top: 5rem;
+
+    .title {
+      font-size: 17px;
+      margin-bottom: 2rem;
+    }
+    .form {
+      width: 100%;
+    }
+  }
+}

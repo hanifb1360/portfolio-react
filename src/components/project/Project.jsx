@@ -4,6 +4,9 @@ import styles from "./Project.module.scss";
 
 const Project = ({ project }) => {
   const [showDetails, setShowDetails] = useState(false);
+  const [closeButtonAnimation, setCloseButtonAnimation] =
+    useState("not clicked");
+
   const detailsRef = useRef(null);
 
   const handleProjectClick = () => {
@@ -25,6 +28,7 @@ const Project = ({ project }) => {
         }
 
         setShowDetails(false);
+        // setCloseButtonAnimation(null); // Reset closeButtonAnimation
       }, 500); // Delay for 500 milliseconds before closing the window
 
       // Animate the window moving down before closing
@@ -80,12 +84,29 @@ const Project = ({ project }) => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.3 }}
+            transition={{
+              duration: 0.4,
+              ease: "easeInOut",
+            }}
             className={styles.projectDetails}
           >
-            <button className={styles.closeButton} onClick={handleProjectClick}>
+            <motion.button
+              className={styles.closeButton}
+              onClick={() => {
+                handleProjectClick();
+                setCloseButtonAnimation("clicked");
+              }}
+              animate={{
+                scale: closeButtonAnimation === "clicked" ? 0.8 : 1,
+                opacity: closeButtonAnimation === "clicked" ? 0 : 1,
+                rotate: closeButtonAnimation === "clicked" ? 45 : 0, // add rotation animation
+              }}
+              transition={{ duration: 0.2 }}
+              onAnimationComplete={() => setCloseButtonAnimation(null)}
+            >
               x
-            </button>
+            </motion.button>
+
             <p className={styles.projectDescription}>{project.description}</p>
             <ul className={styles.projectTech}>
               {project.technologies.map((technology) => (
