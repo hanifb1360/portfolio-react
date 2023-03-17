@@ -1,106 +1,102 @@
 .projectContainer {
   position: relative;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  padding: 40px 20px;
-  border-radius: 10px;
-  background-color: none;
-  margin-bottom: 80px;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  border: solid 2px #fff;
+  border-radius: 15px;
+  transition: all 0.4s ease;
 }
-.projectContainer.clicked {
-  background-color: white;
+.projectContainer:hover {
+  box-shadow: 0px -1px 29px -4px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0px -1px 29px -4px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 0px -1px 29px -4px rgba(255, 255, 255, 0.75);
 }
 .projectContainer .projectImage {
   width: 100%;
-  height: auto;
-  max-height: 400px;
-  border-radius: 10px;
-  filter: brightness(0.2);
-  transition: all 0.3s ease;
-}
-.projectContainer .projectImage.clicked {
-  filter: none;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+  filter: brightness(0.4);
 }
 .projectContainer .projectTitle {
+  font-size: 34px;
+  letter-spacing: 4px;
+  font-weight: bold;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
-  color: white;
   transform: translate(-50%, -50%);
-  letter-spacing: 5px;
-  transition: all 0.3s ease;
-}
-.projectContainer .projectTitle.clicked {
-  display: none;
+  z-index: 2;
+  color: #fff;
 }
 .projectContainer .projectDetails {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding-top: 3rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 3;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin: 10px 0;
-  background-color: rgb(9, 25, 39);
-  border-radius: 15px;
-  padding: 2rem;
+  align-items: center;
+  padding: 4rem;
 }
-.projectContainer .projectDescription {
-  margin: 10px 0;
-  color: rgb(211, 211, 211);
+.projectContainer .projectDetails .closeButton {
+  position: absolute;
+  top: 4rem;
+  right: 8rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
 }
-.projectContainer .projectTech {
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px 20px;
-  margin-bottom: 10px;
+.projectContainer .projectDetails .projectDescription {
+  color: #bebebe;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.projectContainer .projectDetails .projectTech {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+  margin-bottom: 3rem;
   list-style: none;
-  border-bottom: solid 0.5px white;
-}
-.projectContainer .projectTech li {
-  padding: 5px 10px;
-  color: rgb(216, 216, 216);
-  font-size: 12px;
-  margin-right: 33px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-.projectContainer .projectLinks {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
-  width: 70%;
+  border-bottom: solid 0.3px white;
 }
-.projectContainer .projectLinks a {
-  padding: 10px 30px;
-  border: none;
-  border-radius: 20px;
-  font-size: 16px;
-  letter-spacing: 3px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: 0.5s ease;
+.projectContainer .projectDetails .projectTech li {
+  margin-right: 2.2rem;
+}
+.projectContainer .projectDetails .projectLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projectContainer .projectDetails .projectLinks a {
+  color: rgb(61, 61, 61);
+  background-color: #65a8a0;
+  font-size: 1rem;
+  margin: 0 1rem;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s;
 }
-.projectContainer .projectLinks a:nth-child(1) {
-  background-color: #3f8aa7;
-  color: rgb(255, 255, 255);
-}
-.projectContainer .projectLinks a:nth-child(1):hover {
-  background-color: #75acc2;
-}
-.projectContainer .projectLinks a:nth-child(2) {
-  background-color: #3ca4a1;
-  color: rgb(255, 255, 255);
-}
-.projectContainer .projectLinks a:nth-child(2):hover {
-  background-color: #75c2bf;
-}
-.projectContainer.clicked {
-  max-height: 300px;
+.projectContainer .projectDetails .projectLinks a:hover {
+  background-color: #a0c3bf;
+  color: #000;
 }/*# sourceMappingURL=Project.module.css.map */

@@ -1,124 +1,115 @@
 .projectContainer {
   position: relative;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  padding: 40px 20px;
-  border-radius: 10px;
-  background-color: none;
-  margin-bottom: 80px;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  border: solid 2px #fff;
+  border-radius: 15px;
+  transition: all 0.4s ease;
 
-  &.clicked {
-    background-color: white;
+  &:hover {
+    box-shadow: 0px -1px 29px -4px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 0px -1px 29px -4px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0px -1px 29px -4px rgba(255, 255, 255, 0.75);
   }
 
   .projectImage {
     width: 100%;
-    height: auto;
-    max-height: 400px;
-    border-radius: 10px;
-    filter: brightness(0.2);
-    transition: all 0.3s ease;
-
-    &.clicked {
-      filter: none;
-    }
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    filter: brightness(0.4);
   }
 
   .projectTitle {
+    font-size: 34px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
     position: absolute;
     top: 50%;
     left: 50%;
-    color: white;
     transform: translate(-50%, -50%);
-    letter-spacing: 5px;
-    transition: all 0.3s ease;
+    z-index: 2;
 
-    &.clicked {
-      display: none;
-      // letter-spacing: 15px;
-      // color: transparent;
-    }
+    color: #fff;
   }
 
   .projectDetails {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    padding-top: 3rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 3;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin: 10px 0;
-    background-color: rgb(9, 25, 39);
-    border-radius: 15px;
-    padding: 2rem;
-  }
-
-  .projectDescription {
-    margin: 10px 0;
-    color: rgb(211, 211, 211);
-  }
-
-  .projectTech {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px 20px;
-    margin-bottom: 10px;
-    list-style: none;
-    border-bottom: solid 0.5px white;
-    li {
-      padding: 5px 10px;
-      color: rgb(216, 216, 216);
-      font-size: 12px;
-      margin-right: 33px;
-      margin-bottom: 10px;
-
-      border-radius: 5px;
-    }
-  }
-
-  .projectLinks {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-    width: 70%;
+    padding: 4rem;
 
-    a {
-      padding: 10px 30px;
+    .closeButton {
+      position: absolute;
+      top: 4rem;
+      right: 8rem;
+      background-color: transparent;
       border: none;
-      border-radius: 20px;
-      font-size: 16px;
-      letter-spacing: 3px;
-      font-size: 12px;
+      color: #fff;
+      font-size: 2rem;
       cursor: pointer;
-      transition: 0.5s ease;
-      text-decoration: none;
     }
 
-    a:nth-child(1) {
-      background-color: #3f8aa7;
-      color: rgb(255, 255, 255);
+    .projectDescription {
+      color: #bebebe;
+      font-size: 1.5rem;
 
-      &:hover {
-        background-color: #75acc2;
+      text-align: left;
+    }
+
+    .projectTech {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 200;
+      margin-bottom: 3rem;
+
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: solid 0.3px white;
+
+      li {
+        margin-right: 2.2rem;
       }
     }
 
-    a:nth-child(2) {
-      background-color: #3ca4a1;
-      color: rgb(255, 255, 255);
+    .projectLinks {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      &:hover {
-        background-color: #75c2bf;
+      a {
+        color: rgb(61, 61, 61);
+        background-color: #65a8a0;
+        font-size: 1rem;
+        margin: 0 1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 0.5rem 2rem;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: #a0c3bf;
+          color: #000;
+        }
       }
     }
-  }
-
-  &.clicked {
-    max-height: 300px;
   }
 }
