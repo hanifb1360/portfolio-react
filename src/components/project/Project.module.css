@@ -17,21 +17,6 @@
   -o-object-fit: contain;
      object-fit: contain;
   cursor: pointer;
-  filter: brightness(0.4);
-}
-.projectContainer .projectTitle {
-  font-size: 34px;
-  letter-spacing: 4px;
-  font-weight: bold;
-  margin: 0 auto;
-  text-align: center;
-  padding: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  color: #fff;
 }
 .projectContainer .projectDetails {
   position: fixed;
@@ -40,14 +25,13 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  padding-top: 3rem;
+  padding: 3rem 4rem 3rem 4rem;
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem;
 }
 .projectContainer .projectDetails .closeButton {
   position: absolute;
@@ -100,4 +84,25 @@
 .projectContainer .projectDetails .projectLinks a:hover {
   background-color: #a0c3bf;
   color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .projectContainer .projectTitle {
+    font-size: 24px;
+  }
+  .projectContainer .projectDetails {
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  .projectContainer .projectDetails .closeButton {
+    font-size: 1.2rem;
+    top: 4rem;
+    right: 2rem;
+  }
+  .projectContainer .projectDetails .projectDescription {
+    padding: 2rem 1rem 1rem 1rem;
+    font-size: 1rem;
+  }
+  .projectContainer .projectDetails .projectTech {
+    font-size: 0.7rem;
+  }
 }/*# sourceMappingURL=Project.module.css.map */

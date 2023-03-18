@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .navbar {
   z-index: 10;
   position: fixed;
@@ -46,7 +48,7 @@
 
             &:hover,
             &:active {
-              color: rgba(107, 220, 230);
+              color: $hover-color;
             }
           }
         }

@@ -78,7 +78,7 @@ const Project = ({ project }) => {
         className={styles.projectImage}
         onClick={handleProjectClick}
       />
-      <h2 className={styles.projectTitle}>{project.title}</h2>
+
       <AnimatePresence>
         {showDetails && (
           <motion.div
