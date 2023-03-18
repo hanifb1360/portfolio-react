@@ -10,8 +10,8 @@ export const projectList = [
       "I developed an experimental webshop project for SNEAKEX, a sneakers shop, using React JS, TypeScript, and Bootstrap. The website is under development and will soon have Stripe integration for secure payments. I also utilized React context to manage the state of the website. The project features a homepage, product pages, and shopping cart functionality. Further developments are underway to make the website fully functional and responsive.",
     image: SneakexImage,
     technologies: ["React JS", "TypeScript", "Bootstrap"],
-    demoLink: "https://example.com/demo",
-    codeLink: "https://github.com/example/project1",
+    demoLink: "https://spectacular-medovik-3664c7.netlify.app/",
+    codeLink: "https://github.com/hanifb1360/sneakex",
   },
   {
     id: 2,
@@ -31,6 +31,6 @@ export const projectList = [
     image: TdigitalImage,
     technologies: ["Gatsby JS", "WordPress", "Sass"],
     demoLink: "https://www.tdigital.se/",
-    codeLink: "https://github.com/example/project1",
+    codeLink: "",
   },
 ];
