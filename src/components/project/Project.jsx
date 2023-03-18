@@ -4,6 +4,7 @@ import styles from "./Project.module.scss";
 
 const Project = ({ project }) => {
   const [showDetails, setShowDetails] = useState(false);
+
   const [closeButtonAnimation, setCloseButtonAnimation] =
     useState("not clicked");
 
@@ -107,7 +108,11 @@ const Project = ({ project }) => {
               x
             </motion.button>
 
-            <p className={styles.projectDescription}>{project.description}</p>
+            <div
+              className={styles.projectDescription}
+              dangerouslySetInnerHTML={{ __html: project.description }}
+            />
+
             <ul className={styles.projectTech}>
               {project.technologies.map((technology) => (
                 <li key={technology}>{technology}</li>

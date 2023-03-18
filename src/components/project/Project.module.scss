@@ -65,7 +65,10 @@
 
     .projectDescription {
       color: #bebebe;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      // padding-left: 7rem;
+      // padding-right: 7rem;
+      padding: 2rem 7rem 4rem 7rem;
 
       text-align: left;
     }
@@ -75,7 +78,6 @@
       font-size: 1rem;
       font-weight: 200;
       margin-bottom: 3rem;
-
       list-style: none;
       display: flex;
       align-items: center;
