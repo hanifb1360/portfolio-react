@@ -6,7 +6,7 @@
   height: -moz-min-content;
   height: min-content;
   padding: 10%;
-  background-color: rgb(56, 92, 117);
+  background-color: rgb(40, 66, 85);
 }
 .home .my-photo {
   border-radius: 50%;
@@ -16,10 +16,19 @@
 .home h2 {
   letter-spacing: 2px;
   color: #c2d1d4;
-  font-weight: 200;
+  font-weight: 400;
+}
+.home h4 {
+  letter-spacing: 2px;
+  color: #c2d1d4;
+  font-weight: 300;
 }
 .home .aboutTextBox {
+  text-align: left;
   border-top: solid 0.5px #fff;
+  line-height: 29px;
+  background-color: rgb(28, 44, 57);
+  padding: 2rem;
 }
 .home .aboutTextBox p {
   color: #c2d1d4;

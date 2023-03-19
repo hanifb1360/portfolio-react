@@ -17,10 +17,19 @@
   h2 {
     letter-spacing: 2px;
     color: $font-bright;
-    font-weight: 200;
+    font-weight: 400;
+  }
+  h4 {
+    letter-spacing: 2px;
+    color: $font-bright;
+    font-weight: 300;
   }
   .aboutTextBox {
+    text-align: left;
     border-top: solid 0.5px #fff;
+    line-height: 29px;
+    background-color: rgb(28, 44, 57);
+    padding: 2rem;
     p {
       color: $font-bright;
     }
