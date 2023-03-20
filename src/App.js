@@ -22,7 +22,7 @@ const Layout = () => {
     setSideDrawerOpen(false);
   };
 
-  // define closeMenu function
+  // closeMenu function in sideDrawer
   const closeMenu = () => {
     setSideDrawerOpen(false);
   };
