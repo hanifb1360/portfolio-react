@@ -8,17 +8,29 @@ const sideDrawer = (props) => {
   if (props.show) {
     drawerClasses = ["side-drawer", "open"];
   }
+
+  const closeSideMenu = () => {
+    // function to close side menu
+    props.closeMenu();
+  };
+
   return (
     <nav className={drawerClasses.join(" ")}>
       <ul>
         <li>
-          <Link to='/skills'>SKILLS</Link>
+          <Link to='/skills' onClick={closeSideMenu}>
+            SKILLS
+          </Link>
         </li>
         <li>
-          <Link to='/projects'>PROJECTS</Link>
+          <Link to='/projects' onClick={closeSideMenu}>
+            PROJECTS
+          </Link>
         </li>
         <li>
-          <Link to='/contact'>CONTACT</Link>
+          <Link to='/contact' onClick={closeSideMenu}>
+            CONTACT
+          </Link>
         </li>
       </ul>
     </nav>

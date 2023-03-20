@@ -22,6 +22,11 @@ const Layout = () => {
     setSideDrawerOpen(false);
   };
 
+  // define closeMenu function
+  const closeMenu = () => {
+    setSideDrawerOpen(false);
+  };
+
   let backdrop;
 
   if (sideDrawerOpen) {
@@ -31,7 +36,8 @@ const Layout = () => {
   return (
     <div className='app'>
       <Navbar drawerToggleClickHandler={drawerToggleClickHandler} />
-      <SideDrawer show={sideDrawerOpen} />
+      {/* pass down closeMenu as a prop */}
+      <SideDrawer show={sideDrawerOpen} closeMenu={closeMenu} />
       {backdrop}
       <Outlet />
     </div>
