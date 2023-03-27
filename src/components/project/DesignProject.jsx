@@ -4,7 +4,7 @@ import { useProjectDetails } from '../../hooks/useProjectDetails';
 import { useCloseButtonAnimation } from '../../hooks/useCloseButton';
 import { useRef, useState } from 'react';
 
-const Project = ({ project }) => {
+const DesignProject = ({ designProject }) => {
   const [showDetails, setShowDetails] = useState(false);
   const { closeButtonAnimation, setCloseButtonAnimation } =
     useCloseButtonAnimation();
@@ -23,7 +23,7 @@ const Project = ({ project }) => {
   return (
     <div className={styles.projectContainer}>
       <img
-        src={project.image}
+        src={designProject.image}
         alt="it represent a glance on the project main page"
         className={styles.projectImage}
         onClick={handleProjectClick}
@@ -59,28 +59,23 @@ const Project = ({ project }) => {
 
             <div
               className={styles.projectDescription}
-              dangerouslySetInnerHTML={{ __html: project.description }}
+              dangerouslySetInnerHTML={{ __html: designProject.description }}
             />
 
-            <ul className={styles.projectTech}>
-              {project.technologies.map((tech, index) => (
-                <li key={index}>{tech}</li>
-              ))}
-            </ul>
+            {designProject && designProject.technologies && (
+              <ul className={styles.projectTech}>
+                {designProject.technologies.map((tech, index) => (
+                  <li key={index}>{tech}</li>
+                ))}
+              </ul>
+            )}
             <div className={styles.projectLinks}>
               <a
-                href={project.demoLink}
+                href={designProject.demoLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Demo
-              </a>
-              <a
-                href={project.codeLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Code
+                Discover the Project
               </a>
             </div>
           </motion.div>
@@ -90,4 +85,4 @@ const Project = ({ project }) => {
   );
 };
 
-export default Project;
+export default DesignProject;

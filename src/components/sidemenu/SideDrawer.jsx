@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./SideDrawer.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './SideDrawer.scss';
 
 const sideDrawer = (props) => {
-  let drawerClasses = ["side-drawer"];
+  let drawerClasses = ['side-drawer'];
 
   if (props.show) {
-    drawerClasses = ["side-drawer", "open"];
+    drawerClasses = ['side-drawer', 'open'];
   }
 
   const closeSideMenu = () => {
@@ -15,20 +15,25 @@ const sideDrawer = (props) => {
   };
 
   return (
-    <nav className={drawerClasses.join(" ")}>
+    <nav className={drawerClasses.join(' ')}>
       <ul>
         <li>
-          <Link to='/skills' onClick={closeSideMenu}>
+          <Link to="/skills" onClick={closeSideMenu}>
             SKILLS
           </Link>
         </li>
         <li>
-          <Link to='/projects' onClick={closeSideMenu}>
-            PROJECTS
+          <Link to="/design" onClick={closeSideMenu}>
+            DESIGN
           </Link>
         </li>
         <li>
-          <Link to='/contact' onClick={closeSideMenu}>
+          <Link to="/projects" onClick={closeSideMenu}>
+            DEVELOPMENT
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" onClick={closeSideMenu}>
             CONTACT
           </Link>
         </li>

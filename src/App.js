@@ -1,15 +1,16 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home/Home";
-import Skills from "./pages/Skills/Skills";
-import Projects from "./pages/Projects/Projects";
-import Contact from "./pages/Contact/Contact";
-import "./app.scss";
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/Home/Home';
+import Skills from './pages/Skills/Skills';
+import Projects from './pages/Projects/Projects';
+import Contact from './pages/Contact/Contact';
+import Design from './pages/Design/Design';
+import './app.scss';
 
-import SideDrawer from "./components/sidemenu/SideDrawer";
-import BackDrop from "./components/backdrop/BackDrop";
-import { useState } from "react";
+import SideDrawer from './components/sidemenu/SideDrawer';
+import BackDrop from './components/backdrop/BackDrop';
+import { useState } from 'react';
 
 const Layout = () => {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -34,7 +35,7 @@ const Layout = () => {
   }
 
   return (
-    <div className='app'>
+    <div className="app">
       <Navbar drawerToggleClickHandler={drawerToggleClickHandler} />
       {/* pass down closeMenu as a prop */}
       <SideDrawer show={sideDrawerOpen} closeMenu={closeMenu} />
@@ -46,24 +47,28 @@ const Layout = () => {
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
       },
 
       {
-        path: "/skills",
+        path: '/skills',
         element: <Skills />,
       },
       {
-        path: "/projects",
+        path: '/design',
+        element: <Design />,
+      },
+      {
+        path: '/projects',
         element: <Projects />,
       },
       {
-        path: "/contact",
+        path: '/contact',
         element: <Contact />,
       },
     ],

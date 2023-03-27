@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    
     padding: 0 1rem;
 
     .navbar_logo {
@@ -63,6 +64,24 @@
         right: 3%;
         position: absolute;
       }
+    }
+    @media screen and (max-width: 1100px) {
+      .navbar_navigation-items {
+        ul {
+          
+  
+          li {
+            padding: 0 3rem;
+
+            a {
+             font-size: 13px;
+  
+             
+            }
+          }
+        }
+      }
+     
     }
 
     @media screen and (min-width: 760px) {
