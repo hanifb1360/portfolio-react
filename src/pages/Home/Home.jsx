@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.scss';
 import myImage from '../../assets/images/me.jpg';
 import SocialMediaButtons from '../../components/socialMediaButtons/SocialMediaButtons';
+import recommendations from '../../data/recommendations';
 
 const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -55,6 +56,22 @@ const Home = () => {
           helps me create better user experiences. Let's connect and make
           meaningful connections in the industry!
         </p>
+      </div>
+
+      <div className="recommendationsContainer">
+        <h4>Recommendations</h4>
+
+        {recommendations.map(
+          ({ recommenderName, recommenderTitle, recommendationText }) => (
+            <div key={recommenderName} className="recommendation">
+              <div className="recommenderNameTitle">
+                <p className="recommender">{recommenderName}</p>
+                <span>{recommenderTitle}</span>
+              </div>
+              <p className="recommendationText">{recommendationText}</p>
+            </div>
+          )
+        )}
       </div>
 
       <SocialMediaButtons />

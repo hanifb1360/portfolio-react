@@ -34,6 +34,38 @@
       color: $font-bright;
     }
   }
+  .recommendationsContainer{
+    margin-top: 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+   
+
+    .recommendation {
+      padding: 2rem;
+      background-color: #0c565d;
+      margin-bottom: 2.5rem;
+     .recommenderNameTitle {
+      line-height: 2px;
+      .recommender{
+        font-size: 20px;
+      }
+      span {
+       font-size: 12px;
+
+      }
+     }
+     .recommendationText{
+      line-height: 26px;
+      border-top: solid 1px #fff;
+      padding-top: 1rem;
+      
+      
+     }
+    }
+  }
 }
 
 @media screen and (min-width: 760px) {
