@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Home.scss';
 import myImage from '../../assets/images/me.jpg';
 import SocialMediaButtons from '../../components/socialMediaButtons/SocialMediaButtons';
 import recommendations from '../../data/recommendations';
 import useScrollPosition from '../../hooks/useScrollPosition';
+import useFadeOutOnScroll from '../../hooks/useFadeOutOnScroll';
 
 const Home = () => {
   const scrollPosition = useScrollPosition();
+  const aboutTextBoxRef = useRef(null);
+  const opacity = useFadeOutOnScroll(aboutTextBoxRef);
 
   const backgroundColor =
     scrollPosition > 0 ? 'rgb(20, 27, 32)' : 'rgb(40, 66, 85)';
@@ -33,27 +36,36 @@ const Home = () => {
         With a background in Design
       </h4>
 
-      <div className="aboutTextBox">
+      <div className="aboutTextBox" ref={aboutTextBoxRef} style={{ opacity }}>
         <p className="aboutText">
-          Hi, I'm Hanif Bahari! I'm a friendly and approachable frontend
-          developer with a design background. I enjoy using technologies such as
-          React JS, Next JS, and Gatsby JS, and I'm comfortable with styling
-          frameworks like Sass, Chakra UI, Bootstrap, Tailwind CSS, and Styled
-          Components. I'm passionate about staying up-to-date with the latest
-          trends and technologies and enjoy attending courses, tutorials, and
-          conferences. In my free time, I like to draw and create art. My design
-          background gives me a unique perspective on frontend development and
-          helps me create better user experiences. Let's connect and make
-          meaningful connections in the industry!
+          Hi, I'm Hanif Bahari! I'm a passionate Front-end Developer with a
+          design background. I enjoy using technologies such as React JS, Next
+          JS, and Gatsby JS, and I'm comfortable with styling frameworks like
+          Sass, Chakra UI, Bootstrap, Tailwind CSS, and Styled Components. I'm
+          passionate about staying up-to-date with the latest trends and
+          technologies and enjoy attending courses, tutorials, and conferences.
+          In my free time, I like to draw and create art. My design background
+          gives me a unique perspective on frontend development and helps me
+          create better user experiences. Let's connect and make meaningful
+          connections in the industry!
         </p>
       </div>
 
       <div className="recommendationsContainer">
-        <h4>Recommendations</h4>
-
         {recommendations.map(
-          ({ recommenderName, recommenderTitle, recommendationText }) => (
-            <div key={recommenderName} className="recommendation">
+          ({
+            recommenderName,
+            recommenderTitle,
+            recommendationText,
+            transformValue,
+          }) => (
+            <div
+              style={{
+                transform: `translateY(${scrollPosition * transformValue}px)`,
+              }}
+              key={recommenderName}
+              className="recommendation"
+            >
               <div className="recommenderNameTitle">
                 <p className="recommender">{recommenderName}</p>
                 <span>{recommenderTitle}</span>
