@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Home.scss';
 import myImage from '../../assets/images/me.jpg';
 import SocialMediaButtons from '../../components/socialMediaButtons/SocialMediaButtons';
 import recommendations from '../../data/recommendations';
+import useScrollPosition from '../../hooks/useScrollPosition';
 
 const Home = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const scrollPosition = useScrollPosition();
 
   const backgroundColor =
     scrollPosition > 0 ? 'rgb(20, 27, 32)' : 'rgb(40, 66, 85)';

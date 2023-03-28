@@ -23,7 +23,7 @@ const recommendations = [
   {
     id: 4,
     recommenderName: 'Cris Gedda Westrell',
-    recommenderTitle: 'UX Designer at ABC Agency',
+    recommenderTitle: 'Founder of newglue.com (previously Brandzy)',
     recommendationText:
       'For almost 6 months Hanif Bahari was an intern at Brandzy as a Graphic Designer. Hanif’s work for Brandzy has been both essential and of high quality. His work played a significant role in building the company&#39;s first library of content. Hanif is very professional, reliable and focused on the tasks that are given to him. Additionally, Hanif is a great person to have around. He is positive, polite and very curious to always learn more. He adds a lot of positive energy to the team. We are happy to recommend Hanif to any company.',
   },
