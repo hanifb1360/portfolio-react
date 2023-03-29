@@ -1,10 +1,11 @@
 import SkillBar from '../../components/skillbar/Skillbar';
 import styles from './Skills.module.scss';
 import useScrollPosition from '../../hooks/useScrollPosition';
+import useScrollRestoration from '../../hooks/useScrollRestoration';
 
 const Skills = () => {
   const scrollPosition = useScrollPosition();
-
+  useScrollRestoration();
   const backgroundColor =
     scrollPosition > 0 ? 'rgb(20, 27, 32)' : 'rgb(40, 66, 85)';
 

@@ -1,8 +1,10 @@
 import Project from '../../components/project/Project';
 import { projectList } from '../../data/projectList';
+import useScrollRestoration from '../../hooks/useScrollRestoration';
 import styles from './Projects.module.scss';
 
 const Projects = () => {
+  useScrollRestoration();
   return (
     <div className={styles.projectsPage}>
       <div className={styles.portfolioCodeContainer}>

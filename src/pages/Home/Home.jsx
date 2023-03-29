@@ -5,11 +5,13 @@ import SocialMediaButtons from '../../components/socialMediaButtons/SocialMediaB
 import recommendations from '../../data/recommendations';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import useFadeOutOnScroll from '../../hooks/useFadeOutOnScroll';
+import useScrollRestoration from '../../hooks/useScrollRestoration';
 
 const Home = () => {
   const scrollPosition = useScrollPosition();
   const aboutTextBoxRef = useRef(null);
   const opacity = useFadeOutOnScroll(aboutTextBoxRef);
+  useScrollRestoration();
 
   const backgroundColor =
     scrollPosition > 0 ? 'rgb(20, 27, 32)' : 'rgb(40, 66, 85)';

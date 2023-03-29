@@ -36,7 +36,7 @@
     }
   }
   .recommendationsContainer{
-    margin-top: 2rem;
+    margin-top: 7rem;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -76,5 +76,8 @@
       width: 20%;
       margin-top: 0vh;
     }
+    .recommendationsContainer{
+      margin-top: 4rem;
+      }
   }
 }
