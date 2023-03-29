@@ -9,7 +9,7 @@ const Projects = () => {
     <div className={styles.projectsPage}>
       <div className={styles.portfolioCodeContainer}>
         <a href="https://github.com/hanifb1360/portfolio-react">
-          The code behind this website
+          Discover the code behind this website
         </a>
       </div>
 
