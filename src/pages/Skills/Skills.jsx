@@ -32,7 +32,7 @@ const Skills = () => {
         <SkillBar skill="StoryBook" percentage={80} />
         <SkillBar skill="Chakra UI" percentage={90} />
         <SkillBar skill="Strapi" percentage={90} />
-        <SkillBar skill="Mango DB" percentage={90} />
+        <SkillBar skill="Mongo DB" percentage={90} />
       </div>
     </main>
   );

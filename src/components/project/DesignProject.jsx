@@ -2,9 +2,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Project.module.scss';
 import { useProjectDetails } from '../../hooks/useProjectDetails';
 import { useCloseButtonAnimation } from '../../hooks/useCloseButton';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const DesignProject = ({ designProject }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const { closeButtonAnimation, setCloseButtonAnimation } =
     useCloseButtonAnimation();
@@ -19,6 +20,20 @@ const DesignProject = ({ designProject }) => {
       setShowDetails(true);
     }
   };
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 768);
+    }
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className={styles.projectContainer}>
@@ -70,7 +85,11 @@ const DesignProject = ({ designProject }) => {
               </ul>
             )}
             <div className={styles.projectLinks}>
-              <a href={designProject.demoLink} rel="noopener noreferrer">
+              <a
+                target={isMobile ? null : '_blank'}
+                href={designProject.demoLink}
+                rel="noopener noreferrer"
+              >
                 Discover the Project
               </a>
             </div>

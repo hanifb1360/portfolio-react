@@ -1,12 +1,23 @@
 import DesignProject from '../../components/project/DesignProject';
 import { designProjectList } from '../../data/designProjectList';
+import useScrollPosition from '../../hooks/useScrollPosition';
 import useScrollRestoration from '../../hooks/useScrollRestoration';
 import styles from './Design.module.scss';
 
 const Design = () => {
   useScrollRestoration();
+  const scrollPosition = useScrollPosition();
+  useScrollRestoration();
+  const backgroundColor =
+    scrollPosition > 0 ? 'rgb(20, 27, 32)' : 'rgb(40, 66, 85)';
   return (
-    <div className={styles.designPage}>
+    <div
+      style={{
+        backgroundColor,
+        transition: 'background-color 0.6s ease-out',
+      }}
+      className={styles.designPage}
+    >
       <div className={styles.designContainer}>
         {designProjectList.map((designProject) => (
           <DesignProject key={designProject.id} designProject={designProject} />
