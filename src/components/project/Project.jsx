@@ -67,22 +67,29 @@ const Project = ({ project }) => {
                 <li key={index}>{tech}</li>
               ))}
             </ul>
-            <div className={styles.projectLinks}>
-              <a
-                href={project.demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            {/* <div className={styles.projectLinks}>
+              <a href={project.demoLink} rel="noopener noreferrer">
                 Demo
               </a>
-              <a
-                href={project.codeLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={project.codeLink} rel="noopener noreferrer">
                 Code
               </a>
-            </div>
+            </div> */}
+
+            {project.demoLink || project.codeLink ? (
+              <div className={styles.projectLinks}>
+                {project.demoLink && (
+                  <a href={project.demoLink} rel="noopener noreferrer">
+                    Demo
+                  </a>
+                )}
+                {project.codeLink && (
+                  <a href={project.codeLink} rel="noopener noreferrer">
+                    Code
+                  </a>
+                )}
+              </div>
+            ) : null}
           </motion.div>
         )}
       </AnimatePresence>

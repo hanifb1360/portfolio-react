@@ -70,11 +70,7 @@ const DesignProject = ({ designProject }) => {
               </ul>
             )}
             <div className={styles.projectLinks}>
-              <a
-                href={designProject.demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={designProject.demoLink} rel="noopener noreferrer">
                 Discover the Project
               </a>
             </div>

@@ -21,7 +21,7 @@ export const projectList = [
       'The project I worked on is a web application built with React JS as the frontend framework, Strapi as the backend CMS, and Stripe as the payment gateway.<br/><br/> The application is styled using Sass, a CSS preprocessor that provides a more efficient and flexible way to write CSS. The backend of the application is deployed on Render.com, a cloud platform that simplifies the deployment process with a user-friendly interface. The frontend is deployed on Firebase, a scalable and secure platform for web and mobile applications.',
     image: ShiktonImage,
     technologies: ['React JS', 'Strapi', 'Stripe', 'Firebase'],
-    demoLink: 'https://shikton-webshop.web.app/',
+    demoLink: '',
     codeLink: 'https://github.com/hanifb1360/e-commerce-shikton',
   },
   {
