@@ -64,6 +64,8 @@ const Home = () => {
             <div
               style={{
                 transform: `translateY(${scrollPosition * transformValue}px)`,
+                opacity: scrollPosition >= -transformValue * 500 ? 1 : 0, // This statement sets the element's opacity to 1 if the scroll position is greater than or equal to the negative product of the transform value and 500, and 0 otherwise.
+                transition: 'opacity 0.7s ease-out',
               }}
               key={recommenderName}
               className="recommendation"
