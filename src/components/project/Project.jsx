@@ -1,14 +1,15 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Project.module.scss';
 import { useProjectDetails } from '../../hooks/useProjectDetails';
-import { useCloseButtonAnimation } from '../../hooks/useCloseButton';
-import { useEffect, useRef, useState } from 'react';
+import { useCloseButtonAnimation } from '../../hooks/useCloseButtonAnimation';
+import { useRef, useState } from 'react';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const Project = ({ project }) => {
-  const [isMobile, setIsMobile] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const { closeButtonAnimation, setCloseButtonAnimation } =
     useCloseButtonAnimation();
+  const isMobile = useIsMobile();
   const detailsRef = useRef(null);
 
   useProjectDetails(showDetails, setShowDetails);
@@ -20,20 +21,6 @@ const Project = ({ project }) => {
       setShowDetails(true);
     }
   };
-
-  useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= 768);
-    }
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div className={styles.projectContainer}>
@@ -82,14 +69,6 @@ const Project = ({ project }) => {
                 <li key={index}>{tech}</li>
               ))}
             </ul>
-            {/* <div className={styles.projectLinks}>
-              <a href={project.demoLink} rel="noopener noreferrer">
-                Demo
-              </a>
-              <a href={project.codeLink} rel="noopener noreferrer">
-                Code
-              </a>
-            </div> */}
 
             {project.demoLink || project.codeLink ? (
               <div className={styles.projectLinks}>

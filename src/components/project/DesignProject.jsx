@@ -1,14 +1,15 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Project.module.scss';
 import { useProjectDetails } from '../../hooks/useProjectDetails';
-import { useCloseButtonAnimation } from '../../hooks/useCloseButton';
-import { useEffect, useRef, useState } from 'react';
+import { useCloseButtonAnimation } from '../../hooks/useCloseButtonAnimation';
+import { useRef, useState } from 'react';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const DesignProject = ({ designProject }) => {
-  const [isMobile, setIsMobile] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const { closeButtonAnimation, setCloseButtonAnimation } =
     useCloseButtonAnimation();
+  const isMobile = useIsMobile();
   const detailsRef = useRef(null);
 
   useProjectDetails(showDetails, setShowDetails);
@@ -20,20 +21,6 @@ const DesignProject = ({ designProject }) => {
       setShowDetails(true);
     }
   };
-
-  useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= 768);
-    }
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div className={styles.projectContainer}>
