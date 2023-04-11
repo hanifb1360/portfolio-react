@@ -1,4 +1,5 @@
 import Project from '../../components/project/Project';
+import 'animate.css';
 import { projectList } from '../../data/projectList';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import useScrollRestoration from '../../hooks/useScrollRestoration';
@@ -16,7 +17,7 @@ const Projects = () => {
         backgroundColor,
         transition: 'background-color 0.6s ease-out',
       }}
-      className={styles.projectsPage}
+      className={`${styles.projectsPage} animate__animated animate__fadeIn animate__slow`}
     >
       <div className={styles.portfolioCodeContainer}>
         <a href="https://github.com/hanifb1360/portfolio-react">

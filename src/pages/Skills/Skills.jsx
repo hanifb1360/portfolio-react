@@ -2,6 +2,7 @@ import SkillBar from '../../components/skillbar/Skillbar';
 import styles from './Skills.module.scss';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import useScrollRestoration from '../../hooks/useScrollRestoration';
+import 'animate.css';
 
 const Skills = () => {
   const scrollPosition = useScrollPosition();
@@ -15,7 +16,7 @@ const Skills = () => {
         backgroundColor,
         transition: 'background-color 0.6s ease-out',
       }}
-      className={styles.main}
+      className={`${styles.main} animate__animated animate__fadeIn animate`}
     >
       <h2 className={`${styles.title}`}>SKILLS</h2>
       <div className={styles.skillsContainer}>

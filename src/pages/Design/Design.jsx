@@ -3,6 +3,7 @@ import { designProjectList } from '../../data/designProjectList';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import useScrollRestoration from '../../hooks/useScrollRestoration';
 import styles from './Design.module.scss';
+import 'animate.css';
 
 const Design = () => {
   useScrollRestoration();
@@ -16,7 +17,7 @@ const Design = () => {
         backgroundColor,
         transition: 'background-color 0.6s ease-out',
       }}
-      className={styles.designPage}
+      className={`${styles.designPage} animate__animated animate__fadeIn animate__slow`}
     >
       <div className={styles.designContainer}>
         {designProjectList.map((designProject) => (

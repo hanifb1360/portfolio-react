@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import './Home.scss';
+import 'animate.css';
 import myImage from '../../assets/images/me.jpg';
 import SocialMediaButtons from '../../components/socialMediaButtons/SocialMediaButtons';
 import recommendations from '../../data/recommendations';
@@ -26,7 +27,7 @@ const Home = () => {
       <img
         style={{ transform: `translateY(${scrollPosition * -0.2}px)` }}
         id="my-photo"
-        className="my-photo"
+        className="my-photo animate__animated animate__fadeIn animate__slow"
         src={myImage}
         alt="this is the face of hanif Bahari the author of this website"
       />
