@@ -6,6 +6,7 @@ import Skills from './pages/Skills/Skills';
 import Projects from './pages/Projects/Projects';
 import Contact from './pages/Contact/Contact';
 import Design from './pages/Design/Design';
+import WpProjects from './pages/WordPressProjects/WpProjects';
 import './app.scss';
 
 import SideDrawer from './components/sidemenu/SideDrawer';
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: '/projects',
         element: <Projects />,
+      },
+      {
+        path: '/wpprojects',
+        element: <WpProjects />,
       },
       {
         path: '/contact',
