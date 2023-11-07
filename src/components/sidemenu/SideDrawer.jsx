@@ -29,7 +29,12 @@ const sideDrawer = (props) => {
         </li>
         <li>
           <Link to="/projects" onClick={closeSideMenu}>
-            DEVELOPMENT
+            Web DEVELOPMENT
+          </Link>
+        </li>
+        <li>
+          <Link to="/wpprojects" onClick={closeSideMenu}>
+            WordPress DEVELOPMENT
           </Link>
         </li>
         <li>
