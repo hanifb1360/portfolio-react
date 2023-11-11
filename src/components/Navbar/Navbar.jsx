@@ -31,11 +31,7 @@ const Navbar = ({ drawerToggleClickHandler }) => {
               <Link to="/design">DESIGN</Link>
             </li>
             <li>
-              <Link to="/projects">Web DEVELOPMENT</Link>
-            </li>
-
-            <li>
-              <Link to="/wpprojects">WordPress DEVELOPMENT</Link>
+              <Link to="/development">DEVELOPMENT</Link>
             </li>
             <li>
               <Link to="/contact">CONTACT</Link>

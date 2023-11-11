@@ -12,6 +12,7 @@ import './app.scss';
 import SideDrawer from './components/sidemenu/SideDrawer';
 import BackDrop from './components/backdrop/BackDrop';
 import { useState } from 'react';
+import Development from './pages/Development/Development';
 
 const Layout = () => {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: '/wpprojects',
         element: <WpProjects />,
+      },
+      {
+        path: '/development',
+        element: <Development />,
       },
       {
         path: '/contact',
