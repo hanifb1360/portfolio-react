@@ -1,20 +1,17 @@
-
-@import "../../variables.scss";
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  font-family: 'your-preferred-font', sans-serif; // Add your preferred font
-}
+@import '../../variables.scss';
 
 .developmentContainer {
   display: flex;
-  height: 100vh; // Set the height to 100% of the viewport height
-}
+  height: 100vh;
+  flex-direction: row; 
 
+  @media (max-width: 768px) {
+    flex-direction: column; 
+    
+  }
+}
 .side {
-  flex: 1; // Make each side take up equal space
+  flex: 1;
   color: $text-color;
   text-decoration: none;
   text-transform: uppercase;
@@ -31,47 +28,29 @@ body {
   h2 {
     font-size: $header-font-size;
     margin-bottom: $margin-bottom;
+    letter-spacing: 3px;
+    font-weight: 500;
   }
 
   p {
     font-size: $paragraph-font-size;
   }
 
-  .animateRight {
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%);
-   }
-   
-   .animateLeft {
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
-   }
-   
-
   &.leftSide {
     background-color: $primary-color;
-
-    &.animateRight {
-      transform: translateX(100%); // Move to the right
-    }
   }
 
   &.rightSide {
     background-color: $secondary-color;
 
-    &.animateLeft {
-      transform: translateX(-100%); // Move to the left
-    }
-
     &:hover {
       background-color: $hover-bg-color;
       color: $hover-text-color;
-      transform: translateX(0); // Reset the transform on hover
     }
 
     h2,
     p {
-      color: $text-color; // Ensure text color is visible
+      color: $text-color;
     }
   }
 
@@ -79,4 +58,13 @@ body {
     background-color: $hover-bg-color;
     color: $hover-text-color;
   }
+
+  @media (max-width: 1020px) {
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+
+  
 }

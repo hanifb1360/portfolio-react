@@ -3,49 +3,29 @@ import { Link } from 'react-router-dom';
 import styles from './Development.module.scss'; // Import your SCSS styles
 
 const Development = () => {
-  const [shouldRedirect, setShouldRedirect] = useState(false);
-  const [hasSwitched, setHasSwitched] = useState(false);
+  const [animationClass, setAnimationClass] = useState('');
 
   const handleClick = () => {
-    if (!hasSwitched) {
-      setShouldRedirect(true);
-      setHasSwitched(true);
-
-      // Delay the redirection after the animation (adjust the timeout as needed)
-      setTimeout(() => {
-        setShouldRedirect(false);
-      }, 1000); // 1000 milliseconds = 1 second
-    }
+    setAnimationClass((prevClass) => (prevClass === '' ? 'animateRight' : ''));
+    // Add any other logic you need here
   };
 
   return (
     <div className={styles.developmentContainer}>
       <Link
-        to={shouldRedirect ? '/projects' : '/wpprojects'}
-        className={`${styles.side} ${styles.leftSide} ${
-          shouldRedirect ? styles.animateRight : ''
-        }`}
+        to="/wpprojects"
+        className={`${styles.side} ${styles.rightSide} ${animationClass}`}
         onClick={handleClick}
       >
-        <h2>Left Part</h2>
-        <p>This is the left part.</p>
+        <h2>WordPress Development</h2>
       </Link>
       <Link
-        to={shouldRedirect ? '/wpprojects' : '/projects'}
-        className={`${styles.side} ${styles.rightSide} ${
-          shouldRedirect ? styles.animateLeft : ''
-        }`}
+        to="/projects"
+        className={`${styles.side} ${styles.leftSide} ${animationClass}`}
         onClick={handleClick}
       >
-        <h2>Right Part</h2>
-        <p>This is the right part.</p>
+        <h2>Web Development</h2>
       </Link>
-      {shouldRedirect && (
-        <div>
-          {/* Add any loading or transition elements here */}
-          Redirecting...
-        </div>
-      )}
     </div>
   );
 };
